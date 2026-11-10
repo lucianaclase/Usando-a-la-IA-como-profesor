@@ -1,0 +1,105 @@
+🧩 Bloque 1: Arrays (el salto más importante)
+Ejercicio 1.1 — La agenda de contactos
+Crea un array asociativo llamado $agenda con 3 contactos. Cada contacto debe tener: nombre, telefono y email.
+
+Luego:
+
+Recorre el array con foreach y muestra cada contacto en una línea tipo:
+Juan Pérez - 600123456 - juan@mail.com
+
+Añade un cuarto contacto al array.
+
+Muestra cuántos contactos hay ahora con count().
+
+Pista: un array asociativo dentro de otro array asociativo es lo que llamamos array multidimensional.
+
+php
+$agenda = [
+    [
+        'nombre' => 'Juan Pérez',
+        'telefono' => '600123456',
+        'email' => 'juan@mail.com'
+    ],
+    // ...
+];
+
+🔧 Bloque 2: Funciones
+Ejercicio 2.1 — Refactoriza
+Toma el Ejercicio 1.2 (cálculo de notas) y conviértelo en una función analizarNotas(array $notas): array que devuelva un array con: suma, media, maxima, aprobados, suspendidos.
+
+Regla de oro: una función debe hacer una sola cosa y devolver un resultado. No debe hacer echo por dentro (eso es mala práctica).
+
+Ejercicio 2.2 — Validador de contraseñas
+Crea una función validarPassword(string $password): array que devuelva un array de errores. Debe comprobar:
+
+Longitud mínima de 8 caracteres
+
+Al menos una mayúscula
+
+Al menos un número
+
+Al menos un carácter especial (!@#$%^&*)
+
+Si el array devuelto está vacío → contraseña válida.
+
+Pista: aquí necesitas strlen(), preg_match() o recorrer con for + ctype_*.
+
+🧰 Bloque 3: Funciones de arrays y strings (las que usarás todos los días)
+Ejercicio 3.1 — Limpieza de lista de emails
+php
+$emails = [
+    '  Juan@Mail.com ',
+    'PEDRO@mail.COM',
+    '  ana@mail.com',
+    'invalido',
+    'luis@mail.com  ',
+];
+Usando array_map, array_filter y trim/strtolower:
+
+Elimina espacios sobrantes
+
+Pasa todo a minúsculas
+
+Filtra los que no contengan @
+
+Devuelve el array limpio final
+
+Pista: puedes usar filter_var($email, FILTER_VALIDATE_EMAIL) dentro del array_filter.
+
+🌐 Bloque 4: Formularios y superglobales
+Ejercicio 4.1 — Formulario de registro
+Crea un formulario HTML que envíe por POST: nombre, email, edad y password.
+
+En procesar.php:
+
+Valida que ningún campo esté vacío (empty())
+
+Valida email con filter_var
+
+Valida edad entre 18 y 99
+
+Si hay errores, muéstralos en una lista <ul>
+
+Si todo va bien, muestra: "Bienvenido, {nombre}"
+
+Objetivo: entender el ciclo formulario → validación → feedback.
+
+🏛️ Bloque 5: Primer contacto con POO
+Ejercicio 5.1 — La clase CuentaBancaria
+Crea una clase CuentaBancaria con:
+
+Propiedades privadas: titular, saldo
+
+Constructor que reciba el titular y saldo inicial
+
+Métodos: ingresar($cantidad), retirar($cantidad), getSaldo()
+
+retirar() debe lanzar una excepción si no hay saldo suficiente
+
+Luego prueba:
+
+php
+$cuenta = new CuentaBancaria('Ana', 100);
+$cuenta->ingresar(50);
+$cuenta->retirar(200); // debe lanzar excepción
+Conceptos: encapsulación, private, throw new Exception.
