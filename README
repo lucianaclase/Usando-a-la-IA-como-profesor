@@ -44,6 +44,7 @@ Si el array devuelto está vacío → contraseña válida.
 
 Pista: aquí necesitas strlen(), preg_match() o recorrer con for + ctype_*.
 
+
 🧰 Bloque 3: Funciones de arrays y strings (las que usarás todos los días)
 Ejercicio 3.1 — Limpieza de lista de emails
 php
