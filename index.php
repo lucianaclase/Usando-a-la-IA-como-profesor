@@ -49,7 +49,7 @@ funtion analizarNotas(array $notas):
     $aprobados = 0;
     $suspensos = count($notas);
 
-   // Caso especia cuando un array es null
+   // Caso especial cuando un array es null
 //  if (total === 0) {
 //      return [
 //          'suma' => 0,
@@ -70,7 +70,22 @@ funtion analizarNotas(array $notas):
             $aprobados++;
             $suspensos--;
         }
-    
-
 
     }
+    return [
+        'suma' => $suma,
+        'media' => $suma / $total,
+        'maximma' => $maxima,
+        'aprobados' => $aprobados,
+        'suspensos' => $suspensos,
+    ];
+$notas = [7, 5, 3, 9, 6, 4];
+$resultado = analizarNotas($notas);
+echo "Suma: " . $resultado['suma'] . '<br>'; 
+echo "Media: " . $resultado['media'] . '<br>';
+echo "Máxima: " . $resultado['maxima'] . '<br>';
+echo "Aprobados: " . $resultado['aprobados'] . '<br>';
+echo "Suspensos: " . $resultado['suspensos'] . '<br>';
+
+
+
