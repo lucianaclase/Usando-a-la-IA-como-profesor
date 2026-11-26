@@ -67,25 +67,7 @@ Devuelve el array limpio final
 
 Pista: puedes usar filter_var($email, FILTER_VALIDATE_EMAIL) dentro del array_filter.
 
-🌐 Bloque 4: Formularios y superglobales
-Ejercicio 4.1 — Formulario de registro
-Crea un formulario HTML que envíe por POST: nombre, email, edad y password.
-
-En procesar.php:
-
-Valida que ningún campo esté vacío (empty())
-
-Valida email con filter_var
-
-Valida edad entre 18 y 99
-
-Si hay errores, muéstralos en una lista <ul>
-
-Si todo va bien, muestra: "Bienvenido, {nombre}"
-
-Objetivo: entender el ciclo formulario → validación → feedback.
-
-🏛️ Bloque 5: Primer contacto con POO
+🏛️ Bloque 4: Primer contacto con POO
 Ejercicio 5.1 — La clase CuentaBancaria
 Crea una clase CuentaBancaria con:
 
